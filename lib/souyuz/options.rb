@@ -71,11 +71,14 @@ module Souyuz
                                      env_name: "SOUYUZ_ANDROID_KEYSTORE_PASSWORD",
                                      description: "Password of the keystore",
                                      optional: true),
-        FastlaneCore::ConfigItem.new(key: :keystore_tsa,
-                                     default_value: 'http://timestamp.digicert.com',
-                                     env_name: "SOUYUZ_ANDROID_KEYSTORE_TSA",
-                                     description: "TSA for jarsigner",
+        FastlaneCore::ConfigItem.new(key: :keystore_sigalg,
+                                     env_name: "SOUYUZ_ANDROID_KEYSTORE_SIGALG",
+                                     description: "Signature algorithm for jarsigner",
                                      optional: true),
+        FastlaneCore::ConfigItem.new(key: :keystore_digestalg,
+                                     env_name: "SOUYUZ_ANDROID_KEYSTORE_DIGESTALG",
+                                     description: "Digest algorithm for jarsigner",
+                                     optional: true)
       ]
     end
   end
