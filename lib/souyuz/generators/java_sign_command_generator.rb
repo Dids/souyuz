@@ -32,8 +32,8 @@ module Souyuz
 
         options = []
         options << "-verbose" if $verbose
-        options << "-sigalg MD5withRSA"
-        options << "-digestalg SHA1"
+        options << "-sigalg #{config[:keystore_sigalg]}" if config[:keystore_sigalg]
+        options << "-digestalg #{config[:keystore_digestalg]}" if config[:keystore_digestalg]
         options << "-storepass \"#{config[:keystore_password]}\""
         options << "-keystore \"#{config[:keystore_path]}\""
         options << "-tsa #{config[:keystore_tsa]}"
